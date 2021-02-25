@@ -14,7 +14,8 @@
         class="new-todo"
         placeholder="할일을 추가해주세요"
         autofocus
-      />
+      /> 
+      <!-- 여기에 키보드 입력 (addEventListener) -->
       <main>
         <input class="toggle-all" type="checkbox" />
         <ul id="todo-list" class="todo-list"></ul>
@@ -36,3 +37,15 @@
     </div>
   </body>
 </html>
+<script>
+  function addTodo(todo) {
+    console.log(todo)
+  }
+
+  const todoInput = document.querySelector("#new-todo-title")
+  todoInput.addEventListener("keypress", (e) => {
+    if(e.key == "Enter") {
+      addTodo(todoInput.value)
+    }
+  })
+</script>
